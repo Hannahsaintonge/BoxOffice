@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="app" lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Outsourced style-->
     <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Custome Style-->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    
+
 </head>
+
 <body>
-    <div class="main">
-        <h1 class="logo">Box Office</h1>
+    <nav class="main-nav">
+        <ul>
+            <li class="logo">Box Office</li>
+            <li>
+                <i class="material-icons">face</i>Welcome User</li>
 
-    </div>
+        </ul>
+    </nav>
+<section class="search-container">
+<input type="text" placeholder="Search" class="search-bar">
+<button>Search</button>
+<p>Search by genre (i.e. 'horror', 'comedy', 'romance' etc)</p>
+</section>
 
-    <search-criteria></search-criteria> 
-    
-  
+
+    <search-criteria></search-criteria>
+
+
 
 
 
@@ -33,4 +48,5 @@
 
 
 </body>
+
 </html>
