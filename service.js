@@ -8,7 +8,7 @@ function MovieService($http) {
         }).then((response) => {
             movieData = response;
             return movieData;
-            console.log(response);
+            
         });
     };
     return {
