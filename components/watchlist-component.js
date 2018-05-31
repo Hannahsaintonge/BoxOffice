@@ -20,6 +20,7 @@ const watchlistPage = {
     `,
     controller: ["MovieService", function(MovieService) {
         const vm = this;
+        // initilizing movieFavs then storing data from getWatchList method from the service 
         vm.movieFavs = MovieService.getWatchList(); 
         console.log(vm.movieFavs);
     }]
