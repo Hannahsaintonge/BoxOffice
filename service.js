@@ -17,14 +17,19 @@ function MovieService($http, $location) {
         console.log(addedFavs);
         watchListArray.push(addedFavs);
     }
+    //set up getter
+    //getter returns watchlist items
 
-   
+    const getWatchList = () => {
+        console.log(watchListArray);
+        return watchListArray;
+    }
 
-    
 
     return {
         getMovie,
-        setWatchList
+        setWatchList,
+        getWatchList
     };
 
 }
