@@ -2,24 +2,35 @@
 // console.log("search working");
 const searchCriteria = {
     template: `
+    
     <nav class="main-nav">
         <ul>
         <li class="logo">Box Office</li>
-        <li>
-        <i class="material-icons">face</i>Welcome User
+        
+        <li class="face">
+        <i class="material-icons">face</i>movieluvr68
         </li>
         <a href="#!/watchlist-page">View Watchlist</a>
         </ul>
     </nav>
+    <p>this is our tagline</p>
     
-    <section class="search-container" on-submit="$ctrl.filterSearch(searchInput)">
-      <input type="text" placeholder="Search by keyword" class="search-bar" ng-model="searchInput">
-      <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button">Search</button>
-    </section>
-    <div ng-repeat="item in $ctrl.movieList"> 
-    <p>{{item.title}} | <a href="" ng-click="$ctrl.addWatchList(item)">Add to Watchlist</a> </p>
-    
-    <img ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
+    <div class="content-container">
+        
+        <form class="search-container" on-submit="$ctrl.filterSearch(searchInput)">
+        <input type="text" placeholder="Search by keyword" class="search-bar" ng-model="searchInput">
+        <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button"><i class="fa fa-search"></i></button>
+        </form>
+
+    <div class="movie-container">
+        <div ng-repeat="item in $ctrl.movieList"> 
+            <p class="grid-1">{{item.title}} </p>
+            <div class="grid-1">
+            <a href="" ng-click="$ctrl.addWatchList(item)">Add to Watchlist</a>
+            </div>
+            <img class="grid-2" ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
+        </div>
+    </div>
     </div>
     
     `,

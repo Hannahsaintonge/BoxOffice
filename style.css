@@ -7,43 +7,84 @@
 body {
     background-color: #F1F1F1;
     height: 100vh;
+    background-image: url("../BoxOffice/img/lloyd-dirks-74271-unsplash copy.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main-nav {
-    
-    
+     
 }
 
+.face {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: white;
+    background: #EA5B64;
+    padding: 5px;
+    margin-right: -580px;
+    border-radius: 5px;
+}
 .logo {
+    padding: 10px;
     font-family: 'Monoton', cursive;
     font-size: 56px;
     font-weight: 50;
+    color: #EA5B64;
+    text-shadow: 0 0 5px black;
 }
 
 .title {
     font-family: 'Roboto', sans-serif;
     font-weight: 25;
 }
+
 ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
-}
-
-.search-container {
-    height: 20%;
-    width: 70%;
-    margin: 80px auto;
-    
 }
 
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     display: block;
+    color: #EA5B64;
+    padding-top: -5px;
+    padding-left: 10px;
+}
+
+a {
+    font-family: 'Roboto', sans-serif;
+    color: #EA5B64;
+    font-size: 14px;
+    background-color:  #EBEBEC;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #C2C2C2;
+    color: #EA5B64;
+}
+
+.search-container {
+    padding: 15px;
+    height: 30%;
+    width: 80%;
+    margin: 150px auto;
+    background-color: #EBEBEC;
+    border-radius: 5px;
+    box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
+    opacity: 0.98; 
 }
 
 .search-bar {
@@ -51,17 +92,55 @@ p {
     padding: 30px;
     border-radius: 5px;
     border: none;
+    opacity: 0.6; 
+      
 }
 
 .search-button {
-
+    margin: 0 auto;
+    padding: 10px 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 8px;
+    cursor: pointer;
 }
+
 input {
     font-size: 50px;
+    color: #EA5B64;
 }
+
 input::placeholder {
     font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    color: #C2C2C2;  
+}
 
+.movie-container {
+    margin-left: 10%;
+    padding-left: 6px;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
+    display: inline-grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-rows: 3fr 3fr 3fr;
+    grid-gap: 10px;
+    background-color: #EBEBEC;
     
 }
 
+.grid-1 {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px dotted red;
+    
+}
+
+.grid-2 {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    
+}
