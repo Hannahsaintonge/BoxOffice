@@ -2,49 +2,43 @@
 // console.log("search working");
 const searchCriteria = {
     template: `
-
-    <section class="search-container">
+    <nav class="main-nav">
+        <ul>
+        <li class="logo">Box Office</li>
+        <li>
+        <i class="material-icons">face</i>Welcome User
+        </li>
+        </ul>
+    </nav>
+    <section class="search-container" on-submit="$ctrl.filterSearch(searchInput)">
       <input type="text" placeholder="Search" class="search-bar" ng-model="searchInput">
-      <button ng-click="$ctrl.filterSearch(searchInput)">Search</button>
-      <p>Search by genre (i.e. 'horror', 'comedy', 'romance' etc)</p>
+      <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button">Search</button>
+      <p>Search by keyword!</p>
     </section>
-    <p> Title: {{$ctrl.searchedMovie.title}}</p>
-    <img ng-src="https://image.tmdb.org/t/p/w200/{{ $ctrl.searchedMovie.poster_path }}"/>
+    <div ng-repeat="item in $ctrl.movieList"> 
+    <p>{{item.title}} | <a href="" ng-click="$ctrl.addWatchList(item)">Add to Watchlist</a> </p>
+    
+    <img ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
+    </div>
     `,
-    // <section ng-repeat="item in $ctrl.movieInfo track by $index" class="searchResults">
-    // <p> Title: {{ item.title }}</p>
-    // <h4>Description: {{ item.overview }} </h4>
-    // <section class="photoSection">
-    // <img ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
-    // </section>
+ 
     controller: ["MovieService", function(MovieService){
         const vm = this;
         vm.movieInfo = [];
-        MovieService.getMovie().then((response) => {
-            // console.log(response.data);
-            vm.awesomeData = response.data.results;
-            vm.awesomeData.forEach((x) => {
-                vm.movieInfo.push({
-                  title: x.title
-                }); 
+        vm.filterSearch = function(userInput) {
+            // console.log(userInput);
+            MovieService.getMovie(userInput).then((response) => {
+                // console.log(response);
+                vm.movieList = response.data.results;
+                console.log(vm.movieList);
             });
-        });
-
-
-
-        vm.filterSearch = function(searchParameter) {
-            // let searchInput = {};
-            // console.log(searchParameter);
-            for (let i = 0; i < vm.awesomeData.length; i++) {
-                if(searchParameter === vm.awesomeData[i].title){
-                vm.searchedMovie = vm.awesomeData[i];
-                }
-            }
-            console.log(vm.searchedMovie);
         }
 
+        vm.addWatchList = function(addedFavs) {
+            MovieService.setWatchList(addedFavs)
+            };
+    
     }]
-
     };
 
 angular
