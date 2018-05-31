@@ -1,5 +1,5 @@
 "use strict";
-console.log("watch list working");
+// console.log("watch list working");
 const watchlistPage = {
 
 }

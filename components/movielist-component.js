@@ -1,5 +1,5 @@
 "use strict";
-console.log("movie list working");
+// console.log("movie list working");
 const movieList = {
 
 }

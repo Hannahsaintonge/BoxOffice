@@ -1,4 +1,4 @@
 "use strict";
-console.log("module working");
+// console.log("module working");
 angular
     .module("app", []);
