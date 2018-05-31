@@ -2,27 +2,42 @@
 console.log("search working");
 const searchCriteria = {
     template: `
-    <div class="title" ng-repeat="item in $ctrl.awesomeData">
-        <h3>Title: {{ item.title}} </h3>
-        <section class="photo">
-            <img ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
-        </section>
-        <p> {{item.genres[0].name}} </p>
-        <h4>Description: {{ item.overview }} </h4>
-    </div>
+    <section class="search-container">
+      <input type="text" placeholder="Search" class="search-bar">
+      <button ng-click="$ctrl.filterSearch()">Search</button>
+      <p>Search by genre (i.e. 'horror', 'comedy', 'romance' etc)</p>
+    </section>
+
+    <section ng-repeat="item in $ctrl.movieInfo track by $index" class="searchResults">
+    <p> Title: {{ item.title }}</p>
+    <h4>Description: {{ item.overview }} </h4>
+    <section class="photoSection">
+    <img ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
+    </section>
+    </section>
+
     `,
     controller: ["MovieService", function(MovieService){
         const vm = this;
-        // vm.movieInfo = [];
+        vm.movieInfo = [];
         MovieService.getMovie().then((response) => {
             console.log(response.data);
             vm.awesomeData = response.data.results;
-            // response.data.forEach((x) => {
-            //     vm.movieInfo.push({
-            //         title: x.title
-            //     });
-            // });
+            vm.awesomeData.forEach((x) => {
+                vm.movieInfo.push({
+                  title: x.title
+                }); 
+            });
         });
+
+
+
+        vm.filterSearch = function() {
+            for (let i = 1; i < vm.awesomeData.length; i++) {
+              console.log(vm.awesomeData[i].title);
+            }
+        }
+
     }]
 
     };
