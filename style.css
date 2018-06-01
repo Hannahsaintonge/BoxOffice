@@ -275,3 +275,7 @@ input::placeholder {
     font-size: 14px;
     color: black;
  }
+
+ .fa-search {
+     cursor: pointer;
+ }

@@ -6,7 +6,7 @@ const searchCriteria = {
         <ul>
           <li class="logo">Box Office</li>        
           <li class="face"><i class="material-icons">face</i>movieluvr68</li>
-          <li><a href="#!/watchlist-page">View Watchlist</a></li>
+          <a href="#!/watchlist-page">View Watchlist</a>
         </ul>
     </nav>
 
