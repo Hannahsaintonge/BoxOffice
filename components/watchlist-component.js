@@ -5,20 +5,22 @@ const watchlistPage = {
     <nav class="main-nav">
     <ul>
         <li class="logo">Box Office</li>
-        <li>
-        <i class="material-icons">face</i>Welcome User</li>
+        <li class="face-watchlist">
+        <i class="material-icons">face</i>movieluvr68</li>
     </ul>
     </nav>
-    <h3>My Watchlist</h3>
-    
-    <section class="watchlist-box>
+
+    <section class="watchlist-box">
         <form class="watchlist-form">
+            <h3>My Watchlist</h3>
             <ul ng-repeat="item in $ctrl.movieFavs">
-                <li>{{ item.title }}</li>
-                <li><i ng-click="$ctrl.removeMovie(index);" class="material-icons">clear</i></li>
+                <li>{{ $index + 1 }}.</li>
+                <li>{{ item.title }} <i class="material-icons">star</i>{{ item.vote_average }}/10 </li> 
+                <li class="delete-button"><i ng-click="$ctrl.removeMovie(index);" class="material-icons">clear</i></li>
             </ul>
-            <a href="#!/search-criteria">Back to search</a>
+            
         </form>
+        <a href="#!/search-criteria" class="search-back">Back to search</a>
     </section>
     `,
     controller: ["MovieService", function(MovieService) {
