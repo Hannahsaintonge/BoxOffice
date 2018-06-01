@@ -25,6 +25,12 @@ const searchCriteria = {
             <div class="grid-1">
               <a href="" ng-click="$ctrl.addWatchList(item)">Add to Watchlist</a>
             </div>
+            <div class="grid-1 dropdown">
+                <p class="description">Description:</p>
+                <div class="dropdown-content">
+                    <p>{{item.overview}}</p>
+                </div>
+            </div>
             <img class="grid-2" ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
         </div>
       </div>
