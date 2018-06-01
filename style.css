@@ -233,12 +233,8 @@ input::placeholder {
     grid-template-rows: 3fr 3fr 3fr;
     grid-gap: 10px;
     background-color: #EBEBEC;
-    display: none;
 }
 
-.show {
-    display: block;
-}
 
 .grid-1 {
     width: 90%;

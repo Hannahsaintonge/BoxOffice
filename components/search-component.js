@@ -16,7 +16,7 @@ const searchCriteria = {
         <form class="search-container" on-submit="$ctrl.filterSearch(searchInput)">
           <div class="searchbar-input-button"> 
             <input type="text" placeholder="Search by keyword" class="search-bar" ng-model="searchInput">
-            <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button" show-list><i class="fa fa-search"></i></button>
+            <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button"><i class="fa fa-search"></i></button>
           <div>
         </form>
     </div> 
