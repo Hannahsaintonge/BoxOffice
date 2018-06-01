@@ -10,7 +10,7 @@ const searchCriteria = {
         </ul>
     </nav>
 
-    <p>this is our tagline</p>
+    <p class="tagline">stream and search any movie, anywhere, anytime <br> ... always</br></p>
     
     <div class="content-container">        
         <form class="search-container" on-submit="$ctrl.filterSearch(searchInput)">

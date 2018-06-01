@@ -7,14 +7,14 @@ const movieList = {
     template:`
     <div class="movie-container">
     <div ng-repeat="item in $ctrl.movieList"> 
-      <p class="grid-1">{{item.title}} </p>
+      <p class="grid-1 title">{{item.title}} </p>
         <div class="grid-1">
-          <a href="" ng-click="$ctrl.addWatchList(item)">Add to Watchlist</a>
+          <a href="" ng-click="$ctrl.addWatchList(item)" class="add-watchlist">Add to Watchlist</a>
         </div>
         <div class="grid-1 dropdown">
-            <p class="description">Description:</p>
+            <p class="description">See Description</p>
             <div class="dropdown-content">
-                <p>{{item.overview}}</p>
+                <p class="item-description">{{item.overview}}</p>
             </div>
         </div>
         <img class="grid-2" ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
