@@ -11,11 +11,14 @@ const watchlistPage = {
     </nav>
     <h3>My Watchlist</h3>
     
-    <section>
-        <ul ng-repeat="item in $ctrl.movieFavs">
-            <li>{{ item.title }}</li>
-        </ul>
-        <a href="#!/search-criteria">Back to search</a>
+    <section class="watchlist-box>
+        <form class="watchlist-form">
+            <ul ng-repeat="item in $ctrl.movieFavs">
+                <li>{{ item.title }}</li>
+                <li><i ng-click="$ctrl.removeMovie(index);" class="material-icons">clear</i></li>
+            </ul>
+            <a href="#!/search-criteria">Back to search</a>
+        </form>
     </section>
     `,
     controller: ["MovieService", function(MovieService) {
@@ -23,6 +26,10 @@ const watchlistPage = {
         // initilizing movieFavs then storing data from getWatchList method from the service 
         vm.movieFavs = MovieService.getWatchList(); 
         console.log(vm.movieFavs);
+        vm.removeMovie = (index) => {
+            console.log("index is working");
+            vm.movieFavs.splice(index, 1);
+        };
     }]
 }
 
