@@ -1,5 +1,5 @@
 "use strict";
-// console.log("module working");
+
 angular
 // .module("ng-app='name'", [])ngRounte connects to the view
     .module("app", ["ngRoute"])
@@ -14,12 +14,6 @@ angular
         .when("/search-criteria", {
             template: "<search-criteria></search-criteria>"
         })
-        .when("/movie-list", {
-            template: "<movie-list></movie-list>"
-        })
         // otherwise defines what the router should do for unknows
        .otherwise({ redirectTo: "/search-criteria" });
-       
-        
-
     })

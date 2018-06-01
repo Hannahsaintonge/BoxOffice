@@ -1,5 +1,4 @@
 "use strict";
-// console.log("search working");
 const searchCriteria = {
     template: `
     
@@ -24,25 +23,15 @@ const searchCriteria = {
 
     controller: ["MovieService", function (MovieService) {
         const vm = this;
-        //check back to see if need below array
-        //vm.movieInfo = [];
         // this is the ng-click from our search button, takes the userInput as a parameter
         vm.filterSearch = function (userInput) {
-            // console.log(userInput);
             //controller getMovie method takes the userInput from above then using the .then method passing the API response as parameter
             MovieService.getMovie(userInput).then((response) => {
-                // console.log(response);
                 // initializing movieList variable and storing the response.data.results in it
                 vm.movieList = response.data.results;
                 console.log(vm.movieList);
             });
         }
-        // // ng-click calls on this addWatchList method and passes the data to our service through .setWatchList method with 
-        // //the  addedFavs as the parameter
-        // vm.addWatchList = function (addedFavs) {
-        //     MovieService.setWatchList(addedFavs)
-        // };
-
     }]
 };
 

@@ -1,5 +1,5 @@
 "use strict";
-// console.log("movie list working");
+
 const movieList = {
     bindings: {
         movieList: "<"
@@ -23,6 +23,8 @@ const movieList = {
   `,
 controller: ["MovieService", function(MovieService) {
     const vm = this;
+    // ng-click calls on this addWatchList method and passes the data to our service through .setWatchList method with 
+    //the  addedFavs as the parameter
     vm.addWatchList = function(addedFavs) {
         MovieService.setWatchList(addedFavs);
     };

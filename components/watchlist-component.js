@@ -1,5 +1,4 @@
 "use strict";
-// console.log("watch list working");
 const watchlistPage = {
     template: `
     <nav class="main-nav">
