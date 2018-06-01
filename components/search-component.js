@@ -6,7 +6,7 @@ const searchCriteria = {
         <ul>
           <li class="logo">Box Office</li>        
           <li class="face"><i class="material-icons">face</i>movieluvr68</li>
-          <a href="#!/watchlist-page">View Watchlist</a>
+          <li><a href="#!/watchlist-page">View Watchlist</a></li>
         </ul>
     </nav>
 
@@ -14,8 +14,10 @@ const searchCriteria = {
     
     <div class="content-container">        
         <form class="search-container" on-submit="$ctrl.filterSearch(searchInput)">
-          <input type="text" placeholder="Search by keyword" class="search-bar" ng-model="searchInput">
-          <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button"><i class="fa fa-search"></i></button>
+          <div class="searchbar-input-button"> 
+            <input type="text" placeholder="Search by keyword" class="search-bar" ng-model="searchInput">
+            <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button" show-list><i class="fa fa-search"></i></button>
+          <div>
         </form>
     </div> 
     <movie-list movie-list="$ctrl.movieList"></movie-list>   
