@@ -18,30 +18,14 @@ const searchCriteria = {
           <input type="text" placeholder="Search by keyword" class="search-bar" ng-model="searchInput">
           <button ng-click="$ctrl.filterSearch(searchInput)" class="search-button"><i class="fa fa-search"></i></button>
         </form>
-
-      <div class="movie-container">
-        <div ng-repeat="item in $ctrl.movieList"> 
-          <p class="grid-1">{{item.title}} </p>
-            <div class="grid-1">
-              <a href="" ng-click="$ctrl.addWatchList(item)">Add to Watchlist</a>
-            </div>
-            <div class="grid-1 dropdown">
-                <p class="description">Description:</p>
-                <div class="dropdown-content">
-                    <p>{{item.overview}}</p>
-                </div>
-            </div>
-            <img class="grid-2" ng-src="https://image.tmdb.org/t/p/w200/{{ item.poster_path }}"/>
-        </div>
-      </div>
-
-    </div>    
+    </div> 
+    <movie-list movie-list="$ctrl.movieList"></movie-list>   
     `,
 
     controller: ["MovieService", function (MovieService) {
         const vm = this;
         //check back to see if need below array
-        // vm.movieInfo = [];
+        //vm.movieInfo = [];
         // this is the ng-click from our search button, takes the userInput as a parameter
         vm.filterSearch = function (userInput) {
             // console.log(userInput);
@@ -53,11 +37,11 @@ const searchCriteria = {
                 console.log(vm.movieList);
             });
         }
-        // ng-click calls on this addWatchList method and passes the data to our service through .setWatchList method with 
-        //the  addedFavs as the parameter
-        vm.addWatchList = function (addedFavs) {
-            MovieService.setWatchList(addedFavs)
-        };
+        // // ng-click calls on this addWatchList method and passes the data to our service through .setWatchList method with 
+        // //the  addedFavs as the parameter
+        // vm.addWatchList = function (addedFavs) {
+        //     MovieService.setWatchList(addedFavs)
+        // };
 
     }]
 };
